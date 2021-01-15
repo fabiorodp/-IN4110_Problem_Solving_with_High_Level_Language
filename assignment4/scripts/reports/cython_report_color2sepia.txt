@@ -1,0 +1,6 @@
+Timing: cython_report_color2sepia
+Average runtime running cython_report_color2sepia after 3 runs: 9.89594841003418 s
+Average runtime for running cython_report_color2sepia is 1.1064129471150657 faster or slower than python_color2sepia.py
+Average runtime for running cython_report_color2sepia is 0.0015639835988235384 faster or slower than numpy_color2sepia.py
+Average runtime for running cython_report_color2sepia is 1.0775565113121566 faster or slower than numba_color2sepia.py
+Timing performed using: 400x600x3

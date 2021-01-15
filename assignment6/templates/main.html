@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page - Covid19 reported cases</title>
+</head>
+<body>
+
+<h1>Welcome to the COVID19 reported cases from Norway.</h1>
+<p>Use the form below to choose your preferences for plotting the data.</p>
+<br>
+
+<div id="wrapperDiv">
+<div id="div1" style="padding:20px;float:left">
+
+<form action="handle_form" method="POST" target="my_iframe">
+County:
+    <br>
+    <select name="county">
+    <option value="Agder">Agder</option>
+    <option value="Innlandet">Innlandet</option>
+    <option value="More_og_Romsdal">More_og_Romsdal</option>
+    <option value="Nordland">Nordland</option>
+    <option value="Oslo">Oslo</option>
+    <option value="Rogaland">Rogaland</option>
+    <option value="Troms_og_Finnmark">Troms_og_Finnmark</option>
+    <option value="Trondelag">Trondelag</option>
+    <option value="Vestfold_og_Telemark">Vestfold_og_Telemark</option>
+    <option value="Vestland">Vestland</option>
+    <option value="Viken">Viken</option>
+    <option value="Alle_Fylker" selected>Alle_Fylker</option>
+    </select>
+    <br>
+    <br>
+
+Periodicity:
+    <br>
+    <select name="periodicity">
+    <option value="day" selected>Daily</option>
+    <option value="week">Weekly</option>
+    </select>
+    <br>
+    <br>
+
+Date Range:
+    <br>
+    <label for="start">Start date:</label>
+    <input type="date" id="start" name="start"
+    value="2020-03-02" min="2020-03-02" max="2020-11-23">
+    <br>
+    <label for="end">End date:</label>
+    <input type="date" id="end" name="end"
+    value="2020-11-23" min="2020-02-21" max="2020-11-23">
+    <br>
+    <br>
+
+Plot Type:
+    <br>
+    <input type="radio" id="reported_cases" name="plot_type"
+           value="reported_cases" required>
+    <label for="reported_cases">Reported Cases</label>
+    <br>
+    <input type="radio" id="cumulative_cases" name="plot_type"
+           value="cumulative_cases">
+    <label for="cumulative_cases">Cumulative Cases</label>
+    <br>
+    <input type="radio" id="both" name="plot_type" value="both" checked>
+    <label for="both">Both plots</label>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+    <br>
+</form></div>
+<div id="div2" style="padding:20px;float:left">
+
+<iframe name="my_iframe" src="chart_frame" width="600"
+        height="500"></iframe></div>
+</div>
+
+<a href="https://github.uio.no/IN3110/IN3110-fabior/blob/master/assignment6/docs/_build/html/api.html">
+    Sphinx Documentation on GitHub</a>
+<br>
+<a href="index.html">Sphinx Documentation on Flask</a>
+
+</body>
+</html>

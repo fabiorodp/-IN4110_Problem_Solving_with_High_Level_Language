@@ -1,0 +1,3 @@
+Timing: python_report_color2gray
+Average runtime running python_report_color2gray after 3 runs: 11.311733484268188 s
+Timing performed using: 400x600x3

@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 6 api &#8212; Assignment 6 25/11/2020 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Assignment 6’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-web_visualization">
+<span id="assignment-6-api"></span><h1>Assignment 6 api<a class="headerlink" href="#module-web_visualization" title="Permalink to this headline">¶</a></h1>
+<p>Flask app to create a website where the user can choose different Counties,
+Chart’s types, periodicity, and date-rage.</p>
+<dl class="py function">
+<dt id="web_visualization.plot_reported_cases">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_reported_cases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'Alle_Fylker'</span></em>, <em class="sig-param"><span class="n">periodicity</span><span class="o">=</span><span class="default_value">'day'</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">plot_lib</span><span class="o">=</span><span class="default_value">'Altair'</span></em>, <em class="sig-param"><span class="n">view_plot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">plot_title</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">800</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_reported_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate a bar-plot for Covid19’s total daily cases from
+FHI/Norway.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>county</strong> – str: Name od the county to be analyzed, which could
+be  ‘Agder’, ‘Innlandet’, ‘More_og_Romsdal’,
+‘Nordland’, ‘Oslo’, ‘Rogaland’,
+‘Troms_og_Finnmark’, Trondelag’,
+‘Vestfold_og_Telemark’, ‘Vestland’,
+‘Viken’or ‘Alle_Fylker’ for all counties.</p></li>
+<li><p><strong>periodicity</strong> – str: Periodicity to display the plot, which could
+be ‘day’ or ‘week’. Default ‘day’.</p></li>
+<li><p><strong>start</strong> – str or date object: The starting date for the analysis.</p></li>
+<li><p><strong>end</strong> – str or date object: The ending date for the analysis.</p></li>
+<li><p><strong>plot_lib</strong> – str: The name of the plotting library to be used.
+Default is ‘Altair’ which uses Altair. A option
+is ‘plt’ which uses matplotlib.</p></li>
+<li><p><strong>view_plot</strong> – bool: The default is False to not show the plot.</p></li>
+<li><p><strong>plot_title</strong> – bool: The default is False to not display the
+plot’s title.</p></li>
+<li><p><strong>width</strong> – int: Only used for ‘Altair’ plot. Define the width of
+the plotting. Default is 800.</p></li>
+<li><p><strong>height</strong> – int: Only used for ‘Altair’ plot. Define the height of
+the plotting. Default is 500.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>If start and end are None, them it will plot the entire data-base.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.plot_cumulative_cases">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_cumulative_cases</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'Alle_Fylker'</span></em>, <em class="sig-param"><span class="n">periodicity</span><span class="o">=</span><span class="default_value">'day'</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">plot_lib</span><span class="o">=</span><span class="default_value">'Altair'</span></em>, <em class="sig-param"><span class="n">view_plot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">plot_title</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">800</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_cumulative_cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate a line-plot for Covid19’s total daily cases from
+FHI/Norway.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>county</strong> – str: Name od the county to be analyzed, which could
+be  ‘Agder’, ‘Innlandet’, ‘More_og_Romsdal’,
+‘Nordland’, ‘Oslo’, ‘Rogaland’,
+‘Troms_og_Finnmark’, Trondelag’,
+‘Vestfold_og_Telemark’, ‘Vestland’,
+‘Viken’or ‘Alle_Fylker’ for all counties.</p></li>
+<li><p><strong>periodicity</strong> – str: Periodicity to display the plot, which could
+be ‘day’ or ‘week’. Default ‘day’.</p></li>
+<li><p><strong>start</strong> – str or date object: The starting date for the analysis.</p></li>
+<li><p><strong>end</strong> – str or date object: The ending date for the analysis.</p></li>
+<li><p><strong>plot_lib</strong> – str: The name of the plotting library to be used.
+Default is ‘Altair’ which uses Altair. A option
+is ‘plt’ which uses matplotlib.</p></li>
+<li><p><strong>view_plot</strong> – bool: The default is False to not show the plot.</p></li>
+<li><p><strong>plot_title</strong> – bool: The default is False to not display the
+plot’s title.</p></li>
+<li><p><strong>width</strong> – int: Only used for ‘Altair’ plot. Define the width of
+the plotting. Default is 800.</p></li>
+<li><p><strong>height</strong> – int: Only used for ‘Altair’ plot. Define the height of
+the plotting. Default is 500.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>If start and end are None, them it will plot the entire data-base.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.plot_both">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">plot_both</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">county</span><span class="o">=</span><span class="default_value">'Alle_Fylker'</span></em>, <em class="sig-param"><span class="n">periodicity</span><span class="o">=</span><span class="default_value">'day'</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">plot_lib</span><span class="o">=</span><span class="default_value">'Altair'</span></em>, <em class="sig-param"><span class="n">view_plot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">plot_title</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">800</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.plot_both" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate a line-plot for Covid19’s total daily cases from
+FHI/Norway.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>county</strong> – str: Name od the county to be analyzed, which could
+be  ‘Agder’, ‘Innlandet’, ‘More_og_Romsdal’,
+‘Nordland’, ‘Oslo’, ‘Rogaland’,
+‘Troms_og_Finnmark’, Trondelag’,
+‘Vestfold_og_Telemark’, ‘Vestland’,
+‘Viken’or ‘Alle_Fylker’ for all counties.</p></li>
+<li><p><strong>periodicity</strong> – str: Periodicity to display the plot, which could
+be ‘day’ or ‘week’. Default ‘day’.</p></li>
+<li><p><strong>start</strong> – str or date object: The starting date for the analysis.</p></li>
+<li><p><strong>end</strong> – str or date object: The ending date for the analysis.</p></li>
+<li><p><strong>plot_lib</strong> – str: The name of the plotting library to be used.
+Default is ‘Altair’ which uses Altair. A option
+is ‘plt’ which uses matplotlib.</p></li>
+<li><p><strong>view_plot</strong> – bool: The default is False to not show the plot.</p></li>
+<li><p><strong>plot_title</strong> – bool: The default is False to not display the
+plot’s title.</p></li>
+<li><p><strong>width</strong> – int: Only used for ‘Altair’ plot. Define the width of
+the plotting. Default is 800.</p></li>
+<li><p><strong>height</strong> – int: Only used for ‘Altair’ plot. Define the height of
+the plotting. Default is 500.</p></li>
+</ul>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>If start and end are None, them it will plot the entire data-base.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.index">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publishing the index web page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.chart_frame">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">chart_frame</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.chart_frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Publishing the initial chart’s frame web page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="web_visualization.handle_form">
+<code class="sig-prename descclassname">web_visualization.</code><code class="sig-name descname">handle_form</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#web_visualization.handle_form" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handling the form and getting the chosen chart.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Assignment 6</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assignment 6 api</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Assignment 6’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Fabio Rodrigues Pereira.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

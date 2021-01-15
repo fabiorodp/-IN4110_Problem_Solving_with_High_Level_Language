@@ -1,0 +1,5 @@
+
+Time Elapsed for random_array: [0.00977087 0.00518489 0.00317216] s
+Time Elapsed for loop: [1.11238909 0.87932205 0.90181923] s
+Time Elapsed for snake_loop: [0.09443188 0.08585    0.08868408] s
+The slowest is loop with: 0.9645101229349772 avg s

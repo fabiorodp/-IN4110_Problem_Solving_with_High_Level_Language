@@ -1,0 +1,3 @@
+Timing: python_report_color2sepia
+Average runtime running python_report_color2sepia after 3 runs: 10.949005444844564 s
+Timing performed using: 400x600x3
